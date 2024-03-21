@@ -1,0 +1,89 @@
+import React from 'react';
+import Fade from "react-reveal/Fade";
+import { RoughNotation } from "react-rough-notation";
+import Arrow from './Arrow';
+import Header from './Header';
+import Footer from './Footer';
+import TwitterIcon from '@mui/icons-material/Twitter';
+
+
+function Home() {
+  return (
+    <div>
+      <Header/>
+      <>
+        
+        <div className="mx-auto flex justify-center flex-col home max-w-[650px] md:max-w-1xl lg:max-w-7xl mt-[2rem] sm:mt-[0]">
+          <div
+            className="intro_text text-[3.5rem] md:text-[7vw]"
+            data-text="I'm Ritesh Yadav"
+          >
+            I&apos;m Ritesh Yadav
+          </div>
+
+          <div className="max-w-4xl">
+            <p className="text-gray-600 size">
+              MERN Stack Developer 💻 , UX architect and{" "}
+              <RoughNotation
+                type="highlight"
+                show={true}
+                color="#F0DB4F"
+                animationDelay={300}
+                animationDuration={500}
+                padding={10}
+                className="highlight__text text-[#323330]"
+              >
+                Javascript
+              </RoughNotation>{" "}
+              engineer, <span className="highlight__text">Developer</span>{" "}
+              Expert, I also love{" "}
+              <span className="highlight__text">Spirituality</span>, listening
+              to good <span className="highlight__text">Music</span> and sharing
+              the good news with people.{" "}
+            </p>
+
+            <p className="mt-[2rem] text-gray-600 size">
+              A minimalist obsessed with the web world, exploring design with
+              curiosity. View my{" "}
+              <a href="/projects" aria-label="Go to Projects Page">
+                <button className="btn" type="button" tabIndex="-1">
+                  Projects
+                </button>
+              </a>
+              ,{" "}
+
+              <a href="https://drive.google.com/file/d/1hRkTZ0bSZ0ockpAa2yaWajriBoL-wLXT/view?usp=share_link" aria-label="Go to Resume Page">
+                <button className="btn" type="button" tabIndex="-1">
+                  Resume
+                </button>
+              </a>
+              ,{" "}
+              <a href="/contact" aria-label="Go to Contact Page">
+                <button className="btn" type="button" tabIndex="-1">
+                  Contact Me
+                </button>
+              </a>
+              , or send me an email at{" "}
+              <a href="mailto:riteshky19@gmail.com">
+                <button
+                  className="btn"
+                  title="Email"
+                  type="button"
+                  aria-label="Send an email"
+                >
+                  riteshky19@gmail.com
+                </button>
+              </a>
+              .{" "} 
+            </p>
+
+            <Arrow className='cursor-grab' link="https://github.com/riteshh82" title='Github'/>
+          </div>
+        </div>
+      </>
+      <Footer/>
+    </div>
+  )
+}
+
+export default Home
