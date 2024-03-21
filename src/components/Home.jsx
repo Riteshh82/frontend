@@ -45,7 +45,7 @@ function Home() {
             <p className="mt-[2rem] text-gray-600 size">
               A minimalist obsessed with the web world, exploring design with
               curiosity. View my{" "}
-              <a href="/projects" aria-label="Go to Projects Page">
+              <a href="/project" aria-label="Go to Projects Page">
                 <button className="btn" type="button" tabIndex="-1">
                   Projects
                 </button>

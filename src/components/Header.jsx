@@ -21,7 +21,7 @@ function Header() {
     <header className="max-w-6xl flex items-center sm:p-10 p-5 justify-between mx-auto">
       <Fade top>
         <div className="w-14 h-14 border-black border-2 p-[.8px] rounded-full">
-          <Link reloadDocument='/'>
+          <Link to='/'>
             <img
               src={data.avatar_url}
               alt="riteshh82"
@@ -39,8 +39,8 @@ function Header() {
             <li className="link">Contact</li>
           </Link>
 
-          <Link to="/projects">
-            <li className="link">Projects</li>
+          <Link to="/project">
+            <li className="link">Project</li>
           </Link>
         </ul>
 

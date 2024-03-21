@@ -5,11 +5,11 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './components/Home.jsx';
 import Contact from './components/Pages/Contact/Contact.jsx';
-import Project from './components/Pages/Projects/Project.jsx'
+import Project from './components/Pages/Project/Project.jsx'
 
 const route = createBrowserRouter([
   {
-  path:'/portfolio',
+  path:'/',
   element:<Home/>
   },
   {
