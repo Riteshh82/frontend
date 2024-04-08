@@ -1,6 +1,7 @@
 import React from 'react';
 import Fade from "react-reveal/Fade";
 import { RoughNotation } from "react-rough-notation";
+import { Link } from 'react-router-dom';
 import Arrow from './Arrow';
 import Header from './Header';
 import Footer from './Footer';
@@ -52,11 +53,11 @@ function Home() {
               </a>
               ,{" "}
 
-              <a href="https://drive.google.com/file/d/1hRkTZ0bSZ0ockpAa2yaWajriBoL-wLXT/view?usp=share_link" aria-label="Go to Resume Page">
+              <Link to="https://drive.google.com/file/d/1hRkTZ0bSZ0ockpAa2yaWajriBoL-wLXT/view?usp=share_link" target="_blank" rel="noopener noreferrer" aria-label="Go To Ritesh Yadav Resume Page" title="Resume Page">
                 <button className="btn" type="button" tabIndex="-1">
                   Resume
                 </button>
-              </a>
+              </Link>
               ,{" "}
               <a href="/contact" aria-label="Go to Contact Page">
                 <button className="btn" type="button" tabIndex="-1">
