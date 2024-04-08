@@ -4,7 +4,6 @@ import { RoughNotation } from "react-rough-notation";
 import Arrow from './Arrow';
 import Header from './Header';
 import Footer from './Footer';
-import TwitterIcon from '@mui/icons-material/Twitter';
 
 
 function Home() {
@@ -12,6 +11,7 @@ function Home() {
     <div>
       <Header/>
       <>
+      <Fade bottom>
         
         <div className="mx-auto flex justify-center flex-col home max-w-[650px] md:max-w-1xl lg:max-w-7xl mt-[2rem] sm:mt-[0]">
           <div
@@ -80,6 +80,7 @@ function Home() {
             <Arrow className='cursor-grab' link="https://github.com/riteshh82" title='Github'/>
           </div>
         </div>
+        </Fade>
       </>
       <Footer/>
     </div>

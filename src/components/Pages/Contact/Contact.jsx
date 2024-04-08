@@ -7,14 +7,19 @@ import { RoughNotation } from "react-rough-notation";
 function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const [isSend, setIsSend] = useState(false);
+
 
   const contactHandler = (e) => {
     e.preventDefault();
+
+    console.log("Name :", name);
+    console.log("Email :", email);
+    console.log("Message :", message);
   };
+
+
 
   return (
     <>
@@ -63,15 +68,6 @@ function Contact() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-              />
-
-              <input
-                type="subject"
-                placeholder="Subject"
-                className="input-form sm:col-span-2"
-                required
-                value={subject}
-                onChange={(e) => setSubject(e.target.value)}
               />
 
               <textarea

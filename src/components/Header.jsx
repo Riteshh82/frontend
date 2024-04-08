@@ -42,6 +42,10 @@ function Header() {
           <Link to="/project">
             <li className="link">Project</li>
           </Link>
+
+          <Link to="/About">
+            <li className="link">About</li>
+          </Link>
         </ul>
 
         <div className="z-[1100] md:hidden">

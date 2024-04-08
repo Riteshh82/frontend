@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Contact from './components/Pages/Contact/Contact'
 import Project from './components/Pages/Project/Project'
+import About from './components/Pages/About/About'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Footer/>
       <Contact/>
       <Project/>
+      <About/>
 
     </>
   )
