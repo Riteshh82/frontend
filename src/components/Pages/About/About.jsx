@@ -54,13 +54,13 @@ function About() {
           <div className="w-full py-10 grid grid-cols-1 md:grid-cols-2 gap-5 ">
            
               <div>
-                <h1 className="font-bold">Experince</h1>
+                <h1 className="font-bold">Experince 🎖️</h1>
                 <p>1+ Years</p>
               </div>
 
               <div>
-                <h1 className="font-bold">Achivement</h1>
-                <p>1+ Years</p>
+                <h1 className="font-bold">Developer 👨🏼‍💻</h1>
+                <p>MERN Stack</p>
               </div>
 
               <div className="col-span-2"><p>I'm a versatile web developer skilled in frontend (JavaScript, Tailwind
@@ -70,7 +70,7 @@ function About() {
                 strong communication and problem-solving abilities.</p>
               </div>
               <Link to="https://drive.google.com/file/d/1hRkTZ0bSZ0ockpAa2yaWajriBoL-wLXT/view?usp=share_link" target="_blank" rel="noopener noreferrer" aria-label="Go To Ritesh Yadav Resume Page" title="Resume Page">
-              <button className="py-2 px-4 mr-20 rounded-3xl bg-zinc-900 hover:bg-zinc-800 gap-3">
+              <button className="py-2 px-4 mr-20 rounded-lg bg-zinc-900 hover:bg-zinc-800 gap-3">
                   <span className="font-bold text-white">
                   Resume
                   </span>

@@ -81,7 +81,7 @@ function Contact() {
               <button
                 type="submit"
                 onClick={(e) => contactHandler(e)}
-                className={`bg-gray-400' : 'bg-black h-[45px] flex items-center justify-center gap-2 duration-200 transition-all hover:bg-[#0a0a0a] ${
+                className={`bg-gray-400' : 'bg-black h-[45px] flex items-center justify-center gap-2 duration-200 transition-all hover:bg-zinc-800 rounded-md ${
                   loading ? "bg-gray-800 opacity-60" : "bg-black"
                 } text-white`}
               >
