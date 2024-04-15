@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import Fade from 'react-reveal/Fade';
+// import Fade from 'react-reveal/Fade';
 import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -10,7 +10,7 @@ function Footer() {
   return (
     <>
     
-      <Fade bottom>
+      {/* <Fade bottom> */}
         <footer className="footer lg:max-w-7xl mx-auto">
           <Link to="https://twitter.com/Imriteshxo" target="_blank" rel="noopener noreferrer" aria-label="Go To Ritesh Yadav Twitter Page" title="Twitter Page">
             <XIcon className="" />
@@ -28,7 +28,7 @@ function Footer() {
             <InstagramIcon className="" />
           </Link>
           </footer>
-      </Fade>
+      {/* </Fade> */}
     </>
   );
 }

@@ -7,11 +7,12 @@ import Home from './components/Home.jsx';
 import Contact from './components/Pages/Contact/Contact.jsx';
 import Project from './components/Pages/Project/Project.jsx';
 import About from './components/Pages/About/About.jsx'
+import Terminal from './components/Pages/Terminal/Terminal.jsx';
 
-const route = createBrowserRouter([
+const router = createBrowserRouter([
   {
-  path:'/',
-  element:<Home/>
+    path:'/',
+    element:<Home/>
   },
   {
     path:'/contact',
@@ -25,10 +26,12 @@ const route = createBrowserRouter([
     path:'/about',
     element:<About/>
   },
-])
+  {
+    path:'/terminal',
+    element:<Terminal/>
+  },
+]);
 
 createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={route}/>
-  </React.StrictMode>
-)
+  <RouterProvider router={router}/>
+);

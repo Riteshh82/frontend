@@ -1,42 +1,23 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
+import express from "express";
+import cors from "cors";
+import contact from "./Routes/contact.js";
+import "./Connection/conn.js";
+import dotenv from 'dotenv';
+const { config } = dotenv;
+config();
 
-const app = express();
+const server = express();
 
+server.use(express.json());
+server.use(cors());
+server.use('/api/v1', contact);
 
-app.use(express.json());
-app.use(cors());
+const port = process.env.REACT_APP_PORT;
 
-
-mongoose.connect('uri', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log('Connected to MongoDB'))
-.catch(err => console.error(err));
-
-const contactSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  message: String
+server.get("/", (req, res) => {
+  res.send("Hello from server");
 });
 
-
-const Contact = mongoose.model('Contact', contactSchema);
-
-
-app.post('/api/contact', async (req, res) => {
-  try {
-    const { name, email, message } = req.body;
-    const newContact = new Contact({ name, email, message });
-    await newContact.save();
-    res.status(201).json({ message: 'Contact saved successfully' });
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to save contact' });
-  }
+server.listen(port, () => {
+  console.log(`Server started at ${port}`);
 });
-
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

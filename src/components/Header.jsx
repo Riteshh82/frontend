@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Fade from "react-reveal/Fade";
+// import Fade from "react-reveal/Fade";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 
 function Header() {
@@ -19,9 +19,9 @@ function Header() {
 
   return (
     <header className="max-w-6xl flex items-center sm:p-10 p-5 justify-between mx-auto">
-      <Fade top>
+      {/* <Fade top> */}
         <div className="w-14 h-14 border-black border-2 p-[.8px] rounded-full">
-          <Link to='/'>
+          <Link to='/' >
             <img
               src={data.avatar_url}
               alt="riteshh82"
@@ -39,12 +39,15 @@ function Header() {
             <li className="link">Contact</li>
           </Link>
 
-          <Link to="/project">
+          {/* <Link to="/project">
             <li className="link">Project</li>
-          </Link>
+          </Link> */}
 
           <Link to="/About">
             <li className="link">About</li>
+          </Link>
+          <Link to="/terminal">
+            <li className="link">Terminal</li>
           </Link>
         </ul>
 
@@ -61,7 +64,7 @@ function Header() {
             />
           )}
         </div>
-      </Fade>
+      {/* </Fade> */}
     </header>
   );
 }
