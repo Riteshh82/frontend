@@ -11,7 +11,7 @@ function Footer() {
     <>
     
       {/* <Fade bottom> */}
-        <footer className="footer lg:max-w-7xl mx-auto">
+        <footer className="footer p- pl-10 sm:-p-10 lg:max-w-6xl mx-auto">
           <Link to="https://twitter.com/Imriteshxo" target="_blank" rel="noopener noreferrer" aria-label="Go To Ritesh Yadav Twitter Page" title="Twitter Page">
             <XIcon className="" />
           </Link>

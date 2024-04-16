@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../../Header';
-import Fade from "react-reveal";
 import Card from '../../Card';
+// import { Fade } from "react-awesome-reveal";
 
 
 function Project() {

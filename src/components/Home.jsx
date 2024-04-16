@@ -14,7 +14,7 @@ function Home() {
       <>
       {/* <Fade bottom> */}
         
-        <div className="mx-auto flex justify-center flex-col home max-w-[650px] md:max-w-1xl lg:max-w-7xl mt-[2rem] sm:mt-[0]">
+        <div className="mx-auto p-5 sm:p-10 flex justify-center flex-col home max-w-[650px] md:max-w-1xl lg:max-w-6xl mt-[2rem] sm:mt-[0]">
           <div
             className="intro_text text-[3.5rem] md:text-[7vw]"
             data-text="I'm Ritesh Yadav"
