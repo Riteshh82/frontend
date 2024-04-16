@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Header from '../../Header';
-// import Fade from "react-reveal";
+import { Fade } from 'react-awesome-reveal';
 import { RoughNotation } from "react-rough-notation";
 
 const Terminal = () => {
@@ -119,7 +119,7 @@ const Terminal = () => {
   return (
     <>
       <Header />
-      {/* <Fade bottom> */}
+      <Fade Fade direction="up" duration={1000}>
       <div className="mx-[1rem]">
       <div className=" max-w-6xl mx-auto px-5 mt-3">
                <RoughNotation
@@ -150,7 +150,7 @@ const Terminal = () => {
             {chatHistory.map((entry, index) => (
               <div key={index} className='mb-2'>
                 <span className="text-green-400">$ ritesh &gt;&gt; </span>{entry.input}<br />
-                {entry.output && <span className="text-gray-400">{entry.output}</span>}
+                {entry.output && <span className="text-yellow-200">{entry.output}</span>}
               </div>
             ))}
             <form onSubmit={handleInputSubmit}>
@@ -160,7 +160,7 @@ const Terminal = () => {
                   type="text"
                   value={input}
                   onChange={handleInputChange}
-                  className="bg-transparent border-none outline-none text-white w-full"
+                  className="bg-transparent border-none outline-none "
                   style={{ width: '100%', whiteSpace: 'normal'}}
                   placeholder="Type `help` command to start."
                   />
@@ -169,7 +169,7 @@ const Terminal = () => {
           </pre>
         </div>
         </div>
-      {/* </Fade> */}
+      </Fade>
     </>
   );
 };

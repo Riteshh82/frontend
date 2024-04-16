@@ -1,5 +1,5 @@
 import React from 'react';
-// import Fade from 'react-reveal/Fade';
+import { Fade } from 'react-awesome-reveal';
 import { RoughNotation } from "react-rough-notation";
 import {Link}  from 'react-router-dom';
 import Arrow from './Arrow';
@@ -12,9 +12,9 @@ function Home() {
     <div>
       <Header/>
       <>
-      {/* <Fade bottom> */}
+      <Fade Fade direction="up" duration={1000}>
         
-        <div className="mx-auto p-5 sm:p-10 flex justify-center flex-col home max-w-[650px] md:max-w-1xl lg:max-w-6xl mt-[2rem] sm:mt-[0]">
+        <div className="mx-auto sm:p-10 mb-0 pb-0 flex justify-center flex-col home max-w-[650px] md:max-w-1xl lg:max-w-6xl mt-[2rem] sm:mt-[0]">
           <div
             className="intro_text text-[3.5rem] md:text-[7vw]"
             data-text="I'm Ritesh Yadav"
@@ -25,6 +25,7 @@ function Home() {
           <div className="max-w-4xl">
             <p className="text-gray-600 size">
               MERN Stack Developer 💻 , UX architect and{" "}
+              <span className='p-1 text-nowrap'>
               <RoughNotation
                 type="highlight"
                 show={true}
@@ -34,8 +35,9 @@ function Home() {
                 padding={10}
                 className="highlight__text text-[#323330]"
               >
-                Javascript
+                Quality Assurance (QA)
               </RoughNotation>{" "}
+              </span>
               engineer, <span className="highlight__text">Developer</span>{" "}
               Expert, I also love{" "}
               <span className="highlight__text">Spirituality</span>, listening
@@ -80,10 +82,11 @@ function Home() {
 
             <Arrow className='cursor-grab' link="https://github.com/riteshh82" title='Github'/>
           </div>
+      
         </div>
-        {/* </Fade> */}
+        </Fade>
+        <Footer/>
       </>
-      <Footer/>
     </div>
   )
 }
