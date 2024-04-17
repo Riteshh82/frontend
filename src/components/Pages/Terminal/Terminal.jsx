@@ -9,7 +9,7 @@ const Terminal = () => {
   const [chatHistory, setChatHistory] = useState([]);
   const terminalRef = useRef(null);
 
-  const [availableCommands] = useState([
+  const availableCommands = [
     { command: 'help', description: 'Display this message' },
     { command: 'joke', description: 'Get a quick laugh with a funny joke' },
     { command: 'news', description: 'Get the latest news headlines' },
@@ -17,7 +17,7 @@ const Terminal = () => {
     { command: 'about', description: 'Learn more about me' },
     { command: 'contact', description: 'Get in touch with me' },
     { command: 'clear', description: 'Clear the terminal' }
-  ]);
+  ];
 
   const handleInputChange = (e) => {
     setInput(e.target.value);
@@ -25,7 +25,7 @@ const Terminal = () => {
 
   const handleInputSubmit = (e) => {
     e.preventDefault();
-    const trimmedInput = input.trim();
+    const trimmedInput = input.trim().toLowerCase();
     let response = '';
 
     if (trimmedInput === 'help') {
@@ -45,26 +45,25 @@ const Terminal = () => {
         "Why couldn't the leopard play hide and seek? Because he was always spotted!",
       ];
       response = jokes[Math.floor(Math.random() * jokes.length)];
-    }
-    else if (trimmedInput === 'news') {
-      getLatestNews()
-        .then(headlines => {
-          response = headlines.join('\n');
+    } else if (trimmedInput === 'news') {
+      const fetchNews = async () => {
+        try {
+          const headlines = await getLatestNews();
+          const response = headlines.join('\n');
           setChatHistory(prevHistory => [...prevHistory, { input: trimmedInput, output: response }]);
           setOutput(response);
-        })
-        .catch(error => {
+        } catch (error) {
           console.error('Error getting news:', error);
-          response = 'Error fetching news. Please try again later.';
+          const response = 'Error fetching news. Please try again later.';
           setOutput(response);
-        });
+        }
+      };
+    
+      fetchNews();
     }
-    
-    
-    else if (trimmedInput === 'weather') {
+     else if (trimmedInput === 'weather') {
       response = getCurrentWeather();
-    }
-    else if (trimmedInput === 'contact') {
+    } else if (trimmedInput === 'contact') {
       response = (
         <div>
           You can contact us via email at{" "}
@@ -81,15 +80,13 @@ const Terminal = () => {
     }
 
     if (trimmedInput !== 'clear') {
-      const chatEntry = { input: trimmedInput, output: response };
+      const chatEntry = { input: input, output: response }; // Store original input
       setChatHistory(prevHistory => [...prevHistory, chatEntry]);
     }
 
     setOutput(response);
     setInput('');
   };
-
-  
 
   const getCurrentWeather = () => {
     return '🌤️ Sunny with a chance of coding!';
@@ -107,8 +104,6 @@ const Terminal = () => {
       return 'Error fetching news. Please try again later.';
     }
   };
-  
-  
 
   useEffect(() => {
     if (terminalRef.current) {
@@ -119,55 +114,53 @@ const Terminal = () => {
   return (
     <>
       <Header />
-      <Fade Fade direction="up" duration={1000}>
-      <div className="mx-[1rem]">
-      <div className=" max-w-6xl mx-auto px-5 mt-3">
-               <RoughNotation
-                show="underline"
-                animationDelay={400}
-                animationDuration={500}
-                className="text-[2rem] font-bold"
-              >
-                Terminal
-              </RoughNotation>
-      </div>
-      </div>
-
-      {/* </Fade>
-      <Fade bottom> */}
-      <div className="mx-[1rem] border-b pb-[6rem]">
-        <div className= "bg-gray-900 text-white max-w-6xl h-120 mx-auto  py-[1rem] mt-[2rem]  px-5 lg:gap-[10rem] gap-[2rem] rounded-md ">
-          <div className="flex items-center justify-between mb-2">
-            <div className="flex items-center">
-              <div className="w-2.5 h-2.5 rounded-full bg-red-500 mr-2"></div>
-              <div className="w-2.5 h-2.5 rounded-full bg-yellow-500 mr-2"></div>
-              <div className="w-2.5 h-2.5 rounded-full bg-green-500 mr-2"></div>
-            </div>
-           
-            <button onClick={() => {setOutput(''); setChatHistory([]); }} className="text-sm text-gray-400 hover:text-white">Clear</button>
+      <Fade direction="up" duration={1000}>
+        <div className="mx-[1rem]">
+          <div className=" max-w-6xl mx-auto px-5 mt-3">
+            <RoughNotation
+              show="underline"
+              animationDelay={400}
+              animationDuration={500}
+              className="text-[2rem] font-bold"
+            >
+              Terminal
+            </RoughNotation>
           </div>
-          <pre ref={terminalRef} className="whitespace-pre-wrap mx-auto overflow-y-scroll will-change-scroll h-96">
-            {chatHistory.map((entry, index) => (
-              <div key={index} className='mb-2'>
-                <span className="text-green-400">$ ritesh &gt;&gt; </span>{entry.input}<br />
-                {entry.output && <span className="text-yellow-200">{entry.output}</span>}
-              </div>
-            ))}
-            <form onSubmit={handleInputSubmit}>
-              <div className="flex items-center">
-                <span className="text-green-400 text-nowrap">$ ritesh &gt;&gt; </span>
-                <input
-                  type="text"
-                  value={input}
-                  onChange={handleInputChange}
-                  className="bg-transparent border-none outline-none "
-                  style={{ width: '100%', whiteSpace: 'normal'}}
-                  placeholder="Type `help` command to start."
-                  />
-              </div>
-            </form>
-          </pre>
         </div>
+      </Fade>
+      <Fade bottom>
+        <div className="mx-[1rem] border-b pb-[6rem]">
+          <div className="bg-gray-900 text-white max-w-6xl h-120 mx-auto py-[1rem] mt-[2rem] px-5 lg:gap-[10rem] gap-[2rem] rounded-md ">
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-500 mr-2"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500 mr-2"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-green-500 mr-2"></div>
+              </div>
+              <button onClick={() => { setOutput(''); setChatHistory([]); }} className="text-sm text-gray-400 hover:text-white">Clear</button>
+            </div>
+            <pre ref={terminalRef} className="whitespace-pre-wrap mx-auto overflow-y-scroll will-change-scroll h-96">
+              {chatHistory.map((entry, index) => (
+                <div key={index} className='mb-2'>
+                  <span className="text-green-400">$ ritesh &gt;&gt; </span>{entry.input}<br />
+                  {entry.output && <span className="text-yellow-200">{entry.output}</span>}
+                </div>
+              ))}
+              <form onSubmit={handleInputSubmit}>
+                <div className="flex items-center">
+                  <span className="text-green-400 text-nowrap">$ ritesh &gt;&gt; </span>
+                  <input
+                    type="text"
+                    value={input}
+                    onChange={handleInputChange}
+                    className="bg-transparent border-none outline-none "
+                    style={{ width: '100%', whiteSpace: 'normal' }}
+                    placeholder="Type `help` command to start."
+                  />
+                </div>
+              </form>
+            </pre>
+          </div>
         </div>
       </Fade>
     </>
@@ -175,5 +168,3 @@ const Terminal = () => {
 };
 
 export default Terminal;
-
-

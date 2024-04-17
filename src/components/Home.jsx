@@ -55,7 +55,7 @@ function Home() {
               </a>
               ,{" "}
 
-              <Link to="https://drive.google.com/file/d/1hRkTZ0bSZ0ockpAa2yaWajriBoL-wLXT/view?usp=share_link" target="_blank" rel="noopener noreferrer" aria-label="Go To Ritesh Yadav Resume Page" title="Resume Page">
+              <Link to="/src/assets/Ritesh_Yadav_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Go To Ritesh Yadav Resume Page" title="Resume Page">
                 <button className="btn" type="button" tabIndex="-1">
                   Resume
                 </button>
