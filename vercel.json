@@ -1,32 +1,18 @@
 {
+    "version": 2,
+    "bulids": [
+      {
+        "src":"*.js",
+        "use":"@versel/node"
+      }
+    ],
   
     "routes": [
          
           {
           
-            "src":"/",
-            "dest":"/"
-          },
-          {
-            "src":"/about",
-            "dest":"/"
-          },
-          {
-            "src":"/contact",
-            "dest":"/"
-          },
-          {
-            "src":"/project",
-            "dest":"/"
-          },
-          {
-            "src":"/about",
-            "dest":"/"
-          },
-          {
-            "src":"/terminal",
+            "src":"/(.*js)",
             "dest":"/"
           }
-         
     ]
 }

@@ -15,6 +15,7 @@ function Header() {
         setData(data)
       });
   }, [])
+  
 
   return (
     <header className="max-w-6xl flex items-center sm:p-10 p-5 justify-between mx-auto">
@@ -47,7 +48,7 @@ function Header() {
         </Link>
       </ul>
       </Fade>
-
+      <Fade direction="down" duration={1000}>
       <div className="z-[1100] md:hidden">
         {toggle ? (
           <XMarkIcon
@@ -62,6 +63,7 @@ function Header() {
         )}
         
       </div>
+      </Fade>
     </header>
   );
 }
