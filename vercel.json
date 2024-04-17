@@ -1,9 +1,6 @@
 {
     "routes": [
-          { 
-            "source": "/(.*)",
-            "destination": "/" 
-          },
+         
           {
           
             "src":"/",
