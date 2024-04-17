@@ -1,6 +1,11 @@
 {
     "routes": [
-        {
+          { 
+            "source": "/(.*)",
+            "destination": "/" 
+          },
+          {
+          
             "src":"/",
             "dest":"/"
           },
@@ -25,7 +30,7 @@
             "dest":"/"
           },
           {
-            "src": "/src/assets/Ritesh_Yadav_Resume.pdf",
+            "src": "/resume",
             "dest": "/src/assets/Ritesh_Yadav_Resume.pdf"
           }
     ]
