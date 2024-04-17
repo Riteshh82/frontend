@@ -27,8 +27,8 @@
             "dest":"/"
           },
           {
-            "src": "/resume",
-            "dest": "/src/assets/Ritesh_Yadav_Resume.pdf"
+            "src": "/Ritesh_Yadav_Resume",
+            "dest": "/"
           }
     ]
 }
