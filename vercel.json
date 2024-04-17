@@ -35,10 +35,7 @@
           {
             "src":"/terminal",
             "dest":"/"
-          },
-          {
-            "src": "/Ritesh_Yadav_Resume.pdf",
-            "dest": "/"
           }
+         
     ]
 }
