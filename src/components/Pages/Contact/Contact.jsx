@@ -86,8 +86,7 @@ const App = () => {
                 </button>
               </a>
             </div>
-          </Fade>
-          <Fade Fade direction="up" duration={1000}>
+          
             <form
               onSubmit={submit}
               className="w-full lg:w-[600px] py-10 grid grid-cols-1 md:grid-cols-2 gap-5"
