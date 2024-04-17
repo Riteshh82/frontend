@@ -60,7 +60,7 @@ const App = () => {
     <>
       <div className="text-black h-auto">
         <Header />
-        <div className="border-b pb-[6rem] max-w-6xl mx-auto py-[2rem] mt-[1rem] mb-[4rem] px-5 flex lg:items-center  flex-col lg:flex-row lg:gap-[10rem] gap-[2rem]">
+        <div className=" max-w-6xl mx-auto py-[2rem] mt-[1rem] mb-[4rem] px-5 flex lg:items-center  flex-col lg:flex-row lg:gap-[10rem] gap-[2rem]">
         {showErrorPopup && <ErrorPopup message={error} onClose={() => setShowErrorPopup(false)} />}
         {showSuccessPopup && <SuccessPopup message="Thank you so much! 😊" onClose={() => setShowSuccessPopup(false)} />}
         <Fade Fade direction="up" duration={1000}>

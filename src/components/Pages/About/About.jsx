@@ -34,7 +34,7 @@ function About() {
     </Fade>
     
     <div className="text-black h-auto">
-      <div className="border-b pb-[6rem] max-w-6xl mx-auto py-[2rem] mt-[1rem] mb-[rem] px-5 flex lg:items-center justify-center flex-col lg:flex-row lg:gap-[10rem] gap-[2rem]">
+      <div className="max-w-6xl mx-auto py-[2rem] mt-[1rem] mb-[rem] px-5 flex lg:items-center justify-center flex-col lg:flex-row lg:gap-[10rem] gap-[2rem]">
         <Fade direction="up" duration={1000}>
           <div className="mx-auto border-black rounded-md max-w-[300px] lg:w-[600]">
             <img
@@ -43,7 +43,8 @@ function About() {
               className="rounded-md mx-auto"
             />
           </div>
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[1080px] ">
+  
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[1080px] mx-auto">
             <div>
               <h1 className="font-bold">Experience 🎖️</h1>
               <p>1+ Years</p>

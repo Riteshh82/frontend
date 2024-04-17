@@ -9,6 +9,10 @@
             "dest":"/"
           },
           {
+            "src":"/contact",
+            "dest":"/"
+          },
+          {
             "src":"/project",
             "dest":"/"
           },
@@ -21,8 +25,8 @@
             "dest":"/"
           },
           {
-            "src": "/Ritesh_Yadav_Resume.pdf",
-            "dest": "/src/assets/Ritesh_Yadav_Resume.pdf"
+            "src": "/src/assets/Ritesh_Yadav_Resume.pdf",
+            "dest": "/"
           }
     ]
 }

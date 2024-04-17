@@ -128,8 +128,8 @@ const Terminal = () => {
           </div>
         </div>
       </Fade>
-      <Fade bottom>
-        <div className="mx-[1rem] border-b pb-[6rem]">
+      <Fade direction="up" duration={1000}>
+        <div className="mx-[1rem]">
           <div className="bg-gray-900 text-white max-w-6xl h-120 mx-auto py-[1rem] mt-[2rem] px-5 lg:gap-[10rem] gap-[2rem] rounded-md ">
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center">
