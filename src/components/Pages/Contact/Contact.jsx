@@ -5,7 +5,7 @@ import { Fade } from 'react-awesome-reveal';
 import { RoughNotation } from "react-rough-notation";
 import axios from "axios";
 import ErrorPopup from "./ErrorPopup";
-import SuccessPopup from "./SuccessPopup"; // Import SuccessPopup component
+import SuccessPopup from "./SuccessPopup";
 
 const App = () => {
   const [Values, setValues] = useState({
@@ -37,7 +37,7 @@ const App = () => {
       }, 1500);
     } else {
       try {
-        await axios.post(`{window.location.origin}/api/v1/post`, Values);
+        await axios.post("http://localhost:2000/api/v1/post", Values);
         setShowSuccessPopup(true);
         setValues({
           name: "",
@@ -45,6 +45,7 @@ const App = () => {
           message: "",
         });
       } catch (error) {
+        console.log(error)
         setError("An error occurred. Please try again later.");
         setShowErrorPopup(true);
         setTimeout(() => {
